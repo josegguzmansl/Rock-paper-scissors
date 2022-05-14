@@ -20,26 +20,32 @@ function playRound(cs, ps){
     }
     else if(cs === "Rock"){
         if (ps === "Scissors"){
-            return "Rock beats Scissors, You loose"
+            console.log("Rock beats Scissors, You loose")
+            return "pcwin"
         }
         else{
-            return "Paper beats Rock, You Win"
+            console.log("Paper beats Rock, You Win")
+            return "playerwin"
         }
     }
     else if(cs === "Paper"){
         if (ps === "Rock"){
-            return "Paper beats Rock, You Loose"
+            console.log("Paper beats Rock, You Loose")
+            return "pcwin"
         }
         else{
-            return "Scissors beats Paper, You Win"
+            console.log("Scissors beats Paper, You Win")
+            return "playerwin"
         }
     }
     else if(cs === "Scissors"){
         if (ps === "Paper"){
-            return "Scissors beats Paper, You Loose"
+            console.log("Scissors beats Paper, You Loose")
+            return "pcwin"
         }
         else{
-            return "Rock beats Scissors, You Win"
+            console.log("Rock beats Scissors, You Win")
+            return "playerwin"
         }
     }
     else{
@@ -47,7 +53,31 @@ function playRound(cs, ps){
     }
 }
 
-
+function PlayGame(){
+    console.log("Best of 5... GO")
+    let ps = 0, cs = 0
+    while(ps < 5 && cs < 5){
+        compuSele = computerSelection()
+        playerSele = prompt("Choose Rock, Paper or Scissors")
+        result = playRound(compuSele, playerSele)
+        if (result === "playerwin"){
+            ps++
+        }
+        else{
+            cs++
+        }
+        console.log("Score: " +"\nPlayer: " + ps + "\nComputer: " + cs)
+    }
+    console.log("Over! final score is: ")
+    console.log("Player Score: " + ps)
+    console.log("Computer Score: " + cs)
+    if (ps == 5) {
+        console.log("You won! congratulations")
+    }
+    else{
+        console.log("Computer Wins!, try again!")
+    }
+}
 /* 
 Create list of option that contains rock, paper and scissors
 Create Function for the Computer selection
