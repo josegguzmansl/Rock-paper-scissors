@@ -16,34 +16,34 @@ function computerSelection(){
 function playRound(cs, ps){
     ps = capitalize(ps)
     if (cs === ps){
-        console.log("Tie Game!")
+        return "Tie Game!"
     }
     else if(cs === "Rock"){
         if (ps === "Scissors"){
-            console.log("Rock beats Scissors, You loose")
+            return "Rock beats Scissors, You loose"
         }
         else{
-            console.log("Paper beats Rock, You Win")
+            return "Paper beats Rock, You Win"
         }
     }
     else if(cs === "Paper"){
         if (ps === "Rock"){
-            console.log("Paper beats Rock, You Loose")
+            return "Paper beats Rock, You Loose"
         }
         else{
-            console.log("Scissors beats Paper, You Win")
+            return "Scissors beats Paper, You Win"
         }
     }
     else if(cs === "Scissors"){
         if (ps === "Paper"){
-            console.log("Scissors beats Paper, You Loose")
+            return "Scissors beats Paper, You Loose"
         }
         else{
-            console.log("Rock beats Scissors, You Win")
+            return "Rock beats Scissors, You Win"
         }
     }
     else{
-        console.log("Are you dumb? you must pick Rock, Paper or Scissors to play!")
+        return "Are you dumb? you must pick Rock, Paper or Scissors to play!"
     }
 }
 
